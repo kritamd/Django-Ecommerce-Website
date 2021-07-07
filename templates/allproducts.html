@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="container">
+    <h1>All Products</h1>
+    <hr>
+    {% for cat in allcategories %}
+    <br>
+    <h4>{{cat.title}}</h4>
+    <div id='products' class="row ">
+        {% for p in cat.product_set.all %}
+        <div class="col-md-3  card">
+            <div class="m-4">
+                <style>
+                    a:link {
+                        color: black;
+                        text-decoration: none;
+
+                    }
+
+                    a:visited {
+                        color: black;
+                        text-decoration: none;
+
+                    }
+
+
+                    a:hover {
+                        color: blue;
+                        text-decoration: none;
+
+                    }
+                </style>
+                <h3><a href="{% url 'HamroPasal:productdetail' p.slug %}">{{p.title}}</a></h3>
+                <img src="{{p.image.url}}" alt="" class="img-fluid" style="height:250px; object-fit: cover;">
+                <p class="mt-3">Price:<strike>Rs. {{p.marked_price}}</strike>
+                    Rs.{{p.selling_price}}</p>
+                <a href="{% url 'HamroPasal:addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

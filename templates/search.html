@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Search Result for <span class="text-info">"{{request.GET.keyword}}"</span></h3><hr>
+            {% for result in results %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{result.image.url}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                        <h4><a href="{% url 'HamroPasal:productdetail' result.slug %}">{{result.title}}</a></h4>
+                        <p>{{result.description|truncatewords:50}}</p>
+                        <p>Return Policy: {{result.return_policy}}</p>
+                        <a href="{% url 'HamroPasal:addtocart' result.id %}" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container-fluid mt-3 mb-3">
+        <div class="section section-signup" style="background-image: url('/static/login2.jpg'); background-size: cover; background-position: top center; min-height: 650px;">
+
+        <div class="row">
+            <div class="col-md-6 mx-auto mt-3 mb-3"><br><br>
+
+                <h3>Customer Login Form</h3><hr>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button class="btn btn-primary">Login</button>
+                    <br>
+                    {% if error %}
+                    <li style="color: red;">{{error}}</li>
+                    {% endif %}
+                </form>
+                <br>
+                <p>Don't have account?<a href="{% url 'HamroPasal:customerregistration' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}"> Register Here</a></p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    
+{% endblock %}

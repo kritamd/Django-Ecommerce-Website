@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <style>
+                .center {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            </style>
+            <img src="/static/cart.webp" class="center" alt="cdfgdsart" style="height: 350px; width: 500px;">
+            <p class="text-center" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Product Added
+                to your Cart </p>
+            <p class="text-center"><a href="{% url 'HamroPasal:mycart' %}"><button class="btn btn-warning">Your
+                        Cart</button></a></p>
+            <p class="text-center"><a href="{% url 'HamroPasal:home' %}">Click here for more products</a></p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
