@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
+<div class="container-fluid mt-3 mb-3">
+    <div class="section section-signup" style="background-image: url('/static/co.jpg'); background-size: cover;background-position:center; min-height: 650px;">
+
+    <div class="row mx-3">
+
+    <div class="col-md-6 border rounded pt-4">
             <h3>Item in cart</h3>
             <a href="{% url 'HamroPasal:mycart' %}">Update Cart</a>
             <table class="table">
@@ -34,15 +37,28 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-6">
+        
+
+        <div class="col-md-6 mb-3 border rounded pt-4">
             <h3>Checkout Form</h3>
             <form action="" method="POST">
                 {% csrf_token %}
 
                 {{form.as_p}}
-                <button class="btn btn-info">Place Order</button>
+                <style>
+                    .button {
+  background-color: #ba8cd7;
+  display: inline-block;
+  padding: 10px 12px;
+
+
+                    }
+                </style>
+                <button class="button">Place Order</button>
             </form>
         </div>
+    </div>
+    </div>
     </div>
 </div>
 {% endblock %}

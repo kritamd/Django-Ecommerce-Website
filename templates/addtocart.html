@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-3" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;">
+<div class="container-fluid mt-3 mb-3" style="box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;">
     <div class="row">
         <div class="col-md-12">
             <style>
@@ -11,7 +11,7 @@
                     margin-right: auto;
                 }
             </style>
-            <img src="/static/cart.webp" class="center" alt="cdfgdsart" style="height: 350px; width: 500px;">
+            <img src="/static/cart.webp" class="center" alt="cdfgdsart" style="height: 450px; width: 500px;">
             <p class="text-center" style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Product Added
                 to your Cart </p>
             <p class="text-center"><a href="{% url 'HamroPasal:mycart' %}"><button class="btn btn-warning">Your

@@ -3,9 +3,13 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container-fluid mt-3 mb-3">
+        <div class="section section-signup" style="background-image: url('/static/admin.webp'); background-size: cover;background-position:center; min-height: 650px;">
+
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-lg-5 mx-auto mt-4 border rounded pt-4">
+
+            <div class="col-md-6 mx-auto mt-3 mb-3">
                 <h3>Admin Login Form</h3><hr>
                 <form action="" method="POST">
                     {% csrf_token %}
@@ -14,8 +18,11 @@
                     {% if error %}
                     <li style="color: red;">{{error}}</li>
                     {% endif %}
+                
                 </form>
 
+</div>
+</div>
             </div>
         </div>
     </div>

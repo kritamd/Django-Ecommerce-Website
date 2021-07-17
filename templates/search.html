@@ -4,9 +4,11 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="container-fluid mt-3 mb-3">
+    <div class="section section-signup" style="background-image: url('/static/white.jpg'); background-size: cover;background-position:center; min-height: 650px;">
+
+    <div class="row mx-3">
+        <div class="col-md-12 mt-3 mb-3">
             <h3>Search Result for <span class="text-info">"{{request.GET.keyword}}"</span></h3><hr>
             {% for result in results %}
                 <div class="row">
@@ -23,6 +25,7 @@
                 <br>
             {% endfor %}
         </div>
+    </div>
     </div>
 </div>
 
